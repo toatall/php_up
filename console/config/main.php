@@ -29,6 +29,9 @@ return [
                     'levels' => ['error', 'warning'],
                 ],
             ],
+        ],       
+        'stringHelper' => [
+            'class' => 'common\components\StringHelper',   
         ],
     ],
     'params' => $params,

@@ -44,8 +44,22 @@ return [
             'rules' => [
             ],
         ],
+        
+        'mailer' => [
+            'class' => 'yii\swiftmailer\Mailer',
+            'useFileTransport' => false,
+            'transport' => [
+                'class' => 'Swift_SmtpTransport',
+                'host' => 'smtp.gmail.com',
+                'username' => 'test.php.up@gmail.ru',
+                'password' => '555333111',
+                'port' => '587',
+                'ecryption' => 'tls',
+            ],
+        ],
+        
         'stringHelper' => [
-            'class' => 'frontend\components\StringHelper',
+            'class' => 'common\components\StringHelper',
         ],        
     ],
     'params' => $params,
