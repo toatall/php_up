@@ -15,6 +15,7 @@ return [
     'components' => [
         'request' => [
             'csrfParam' => '_csrf-frontend',
+            'enableCsrfValidation' => false,
         ],
         'user' => [
             'identityClass' => 'common\models\User',
@@ -44,19 +45,7 @@ return [
             'rules' => [
             ],
         ],
-        
-        'mailer' => [
-            'class' => 'yii\swiftmailer\Mailer',
-            'useFileTransport' => false,
-            'transport' => [
-                'class' => 'Swift_SmtpTransport',
-                'host' => 'smtp.gmail.com',
-                'username' => 'test.php.up@gmail.ru',
-                'password' => '555333111',
-                'port' => '587',
-                'ecryption' => 'tls',
-            ],
-        ],
+                
         
         'stringHelper' => [
             'class' => 'common\components\StringHelper',
