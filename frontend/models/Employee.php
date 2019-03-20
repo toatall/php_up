@@ -58,8 +58,13 @@ class Employee extends Model
     {
         $sql = "insert into employee (id, fio, date_birthday, date_start_work, position, department_number, email) \n"
                     . "values (null, '{$this->lastName} {$this->firstName} {$this->middleName}', '{$this->date_birthday}', '{$this->date_start_work}', '{$this->position}', '{$this->id_code}', '{$this->email}')";
-        return \Yii::$app->db->createCommand($sql)->execute();
-        
+        return \Yii::$app->db->createCommand($sql)->execute();        
     }      
     
+    public function topSalary($limit=10)
+    {
+        $liimit = intval($limit);
+        $sql = "select * from employee order by salary desc limit {$limit}";
+        return \Yii::$app->db->createCommand($sql)->queryAll();
+    }
 }

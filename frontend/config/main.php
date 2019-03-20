@@ -49,7 +49,11 @@ return [
         
         'stringHelper' => [
             'class' => 'common\components\StringHelper',
-        ],        
+        ],  
     ],
     'params' => $params,
+    'aliases' => [
+        '@files' => '/var/www/project/frontend/web/files',
+        '@photos' => '@files/photos',
+    ],
 ];
